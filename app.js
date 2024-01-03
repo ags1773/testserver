@@ -1,11 +1,12 @@
 const express = require("express");
 const app = express();
-const port = 5000;
-const payload = "HelloWorld\n".repeat(10);
+const port = 5001;
+const payload = "HelloWorld\n".repeat(1000);
 const fs = require("fs");
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 
-app.use(bodyParser.json({ limit: '100mb' }));
+app.use(bodyParser.json({ limit: "10mb" }));
+
 
 app.use((req, res, next) => {
   console.log(
